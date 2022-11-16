@@ -1,0 +1,24 @@
+{
+    "fields" : [
+         {
+            "name" : "Item",
+            "type" : "string",
+            "required" : true
+        },
+        {
+            "name" : "Quantity",
+            "type" : "number",
+            "required" : true
+        },
+        {
+            "name" : "Price",
+            "type" : "number",
+            "required" : false
+        },
+        {
+            "name" : "Unidades",
+            "type" : "number",
+            "required" : true
+        }
+    ]
+}

@@ -1,0 +1,97 @@
+{
+	"name" : "ventas",
+	"required" : true,
+	"type" : "object",
+	"fields" : [
+		{
+			"name" : "idVenta",
+			"required" : true,
+			"type" : "index"
+		},
+		{
+			"name" : "fecha",
+			"required" : true,
+			"type" : "date"
+		},
+		{
+			"name" : "productos",
+			"required" : true,
+			"type" : "array",
+			"max-length" : 10,
+			"element" : {
+				"type" : "object",
+				"fields" : [
+					{
+						"name" : "producto",
+						"required" : true,
+						"type" : "object",
+						"fields" : [
+							{
+								"name" : "idProducto",
+								"required" : true,
+								"type" : "index"
+							},
+							{
+								"name" : "nombre",
+								"required" : true,
+								"type" : "string",
+								"max-length" : 10
+							},
+							{
+								"name" : "coste",
+								"required" : true,
+								"type" : "float",
+								"min" : 0,
+								"max" : 100.0
+							},
+							{
+								"name" : "precio",
+								"required" : true,
+								"type" : "float",
+								"min" : 100.0,
+								"max" : 1000.0
+							},
+							{
+								"name" : "comentarios",
+								"required" : false,
+								"type" : "string",
+								"max-length" : 50
+							}
+						]
+					},
+					{
+						"name" : "unidades",
+						"required" : true,
+						"type" : "int",
+						"min" : 1,
+						"max" : 15
+					}
+				]
+			}
+		},
+		{
+			"name" : "cliente",
+			"required" : false,
+			"tyoe" : "object",
+			"fields" : [
+				{
+					"name" : "idCliente",
+					"required" : true,
+					"type" : "index",
+				},
+				{
+					"name" : "nombre",
+					"required" : true,
+					"type" : "string",
+					"max-length" : 15
+				},
+				{
+					"name" : "email",
+					"required" : false,
+					"type" : "string",
+					"max-length" : 20
+				}
+			]
+		}
+	]
+}
