@@ -20,6 +20,7 @@
 			"max-length" : 10,
 			"element" : {
 				"type" : "object",
+				"required" : true,
 				"fields" : [
 					{
 						"name" : "producto",
@@ -29,13 +30,15 @@
 							{
 								"name" : "idProducto",
 								"required" : true,
-								"type" : "index"
+								"type" : "int",
+								"min" : 1,
+								"max" : 40
 							},
 							{
 								"name" : "nombre",
 								"required" : true,
 								"type" : "string",
-								"max-length" : 10
+								"pattern" : "?-###"
 							},
 							{
 								"name" : "coste",
@@ -54,7 +57,7 @@
 							{
 								"name" : "comentarios",
 								"required" : false,
-								"type" : "string",
+								"type" : "text",
 								"max-length" : 50
 							}
 						]
@@ -72,24 +75,24 @@
 		{
 			"name" : "cliente",
 			"required" : false,
-			"tyoe" : "object",
+			"type" : "object",
 			"fields" : [
 				{
 					"name" : "idCliente",
 					"required" : true,
-					"type" : "index",
+					"type" : "int",
+					"min" : 10,
+					"max" : 100
 				},
 				{
 					"name" : "nombre",
 					"required" : true,
-					"type" : "string",
-					"max-length" : 15
+					"type" : "name"
 				},
 				{
 					"name" : "email",
 					"required" : false,
-					"type" : "string",
-					"max-length" : 20
+					"type" : "email"
 				}
 			]
 		}
